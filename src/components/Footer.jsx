@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 function PdfSlidesButton() {
-  const pdfUrl = "/pdf/prompt-slides.pdf";
+  const pdfUrl = `${import.meta.env.BASE_URL}pdf/prompt-slides.pdf`;
 
   return (
     <div className="flex justify-center items-center p-2 min-h-40">
