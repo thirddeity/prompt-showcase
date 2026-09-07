@@ -17,7 +17,7 @@ const AuthenticatedApp = () => {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/prompt-showcase">
       <ScrollToTop />
       <AuthenticatedApp />
     </Router>
