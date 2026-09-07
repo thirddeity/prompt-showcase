@@ -1,5 +1,7 @@
 # prompt-showcase
 
+**SHOWCASE:** https://thirddeity.github.io/prompt-showcase/
+
 จัดทำโดย: พงศ์อมร วงศ์เฉลิมทานต์  
 รหัสนักศึกษา: 2610711302015
 เว็บพอร์ตโฟลิโอส่ง อ.อภิมุข ม่วงเกษม  
