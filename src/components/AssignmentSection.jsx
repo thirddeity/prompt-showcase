@@ -207,7 +207,7 @@ function ResultDisplay({ assignment, type }) {
   if (type === "zero") {
     switch (assignment.resultType) {
       case "image":
-        return <ResultImage src={"/leaf.jpeg"} blur={false} />;
+        return <ResultImage src={"/images/leaf.jpeg"} blur={false} />;
       case "graph":
         return <ResultGraph few={false} />;
       case "code":

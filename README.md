@@ -21,6 +21,5 @@
 ## รันยังไง
 
 ```bash
-pnpm install   # หรือ npm install
-pnpm dev       # หรือ npm run dev
+pnpm install && pnpm dev
 ```

@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 function PdfSlidesButton() {
-  const pdfUrl = "/Prompt-Engineering-slides-redesign.pdf";
+  const pdfUrl = "/pdf/prompt-slides.pdf";
 
   return (
-    <div className="flex justify-center items-center p-2 bg-[#1a1a1a] min-h-40">
+    <div className="flex justify-center items-center p-2 min-h-40">
       <a
         href={pdfUrl}
         target="_blank"
