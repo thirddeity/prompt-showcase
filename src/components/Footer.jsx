@@ -1,73 +1,28 @@
 import { motion } from "framer-motion";
 
-function PdfSlidesButton() {
-  const pdfUrl = `${import.meta.env.BASE_URL}pdf/prompt-slides.pdf`;
+const cornerPath = "M32,32C14.355,32,0,17.645,0,0h.985c0,17.102,13.913,31.015,31.015,31.015v.985Z";
 
+function DrawerCta({ href, label, ariaLabel, top, bottom }) {
   return (
-    <div className="flex justify-center items-center p-2 min-h-40">
-      <a
-        href={pdfUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="
-          /* Layout */
-          inline-flex items-center gap-6 px-12 py-5 
-          
-          /* Shape & Border */
-          rounded-full border-2 border-[#ff3e3e] 
-          
-          /* Colors & Background */
-          bg-[#0c0c0c] text-emerald-200 
-          
-          /* Typography */
-          font-sans font-bold text-3xl uppercase tracking-tight
-          
-          /* Glow Effect (Neon Red) */
-          shadow-[0_0_20px_2px_rgba(255,62,62,0.6)]
-          
-          /* Interaction (Transitions) */
-          transition-all duration-300 ease-out
-          
-          /* Hover States */
-          hover:scale-105 
-          hover:shadow-[0_0_30px_5px_rgba(255,62,62,0.8)]
-          hover:border-[#ff5e5e]
-          
-          /* Focus State for Accessibility */
-          focus:outline-none focus:ring-4 focus:ring-[#ff3e3e]/50
-        "
-      >
-        <span>PDF Slides</span>
+    <div className="btn-container scroll-mt-32">
+      <div className="btn-drawer transition-top">{top}</div>
+      <div className="btn-drawer transition-bottom">{bottom}</div>
 
-        {/* --- Custom Integrated PDF & Download Icon --- */}
-        <div className="relative w-16 h-16 flex items-center justify-center">
-          {/* แสงเรืองแสงสีแดงหลังไอคอน */}
-          {/* <div className="absolute inset-0 bg-[#ff3e3e] rounded-full blur-md opacity-70"></div> */}
-
-          {/* SVG ไอคอน (ทำตามแบบในภาพ) */}
-          <svg
-            viewBox="0 0 100 100"
-            className="relative w-full h-full text-[#ff3e3e]"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            {/* เส้นขอบรูปเอกสาร */}
-            <path d="M30 15 H70 L85 30 V85 H30 Z" />
-            {/* เส้นมุมพับเอกสาร */}
-            <path d="M70 15 V30 H85" />
-
-            {/* ข้อความ "PDF" (จำลองด้วยเส้น) */}
-            <text x="57" y="75" fontSize="16" fontWeight="bold" fill="currentColor" stroke="none" textAnchor="middle">
-              PDF
-            </text>
-
-            {/* ลูกศรชี้ลง (Download Icon) */}
-          </svg>
-        </div>
+      <a href={href} target="_blank" rel="noopener noreferrer" className="btn" aria-label={ariaLabel}>
+        <span className="btn-text">{label}</span>
       </a>
+
+      {[0, 1, 2, 3].map((index) => (
+        <svg
+          key={index}
+          className="btn-corner"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="-1 1 32 32"
+          aria-hidden="true"
+        >
+          <path d={cornerPath} />
+        </svg>
+      ))}
     </div>
   );
 }
@@ -114,7 +69,22 @@ export default function Footer() {
           >
             APIMUK MUANGKASEM
           </h3>
-          <PdfSlidesButton />
+          <div className="footer-cta-row">
+            <DrawerCta
+              href={`${import.meta.env.BASE_URL}pdf/prompt-slides.pdf`}
+              label="PDF Slides"
+              ariaLabel="เปิด PDF Slides"
+              top="Open"
+              bottom="slides"
+            />
+            <DrawerCta
+              href="https://github.com/thirddeity/prompt-showcase"
+              label="Github"
+              ariaLabel="ดูโปรเจกต์บน GitHub"
+              top="Redirect"
+              bottom="to..."
+            />
+          </div>
         </motion.div>
 
         {/* Credits */}
